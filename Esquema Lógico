@@ -1,0 +1,51 @@
+País(nome, loc, daimyô)
+
+Vila(ID, nome, loc, símbolo, Nome_Pais!)
+Nome_Pais -> País(nome)
+
+Kage(ID_Vila,número, nome)
+ID_Vila -> Vila(ID)
+
+Missão(ID, nível, recompensa, data)
+
+Time(número, memb_lider, memb_subordinados)
+
+Envia(ID_Missão, Num_Time, ID_Vila!)
+ID_Missão -> Missão(ID)
+Num_Time -> Time(número)
+ID_Vila -> Vila(ID)
+
+Torneio (ID, Prêmio, data)
+
+Pódios(posicao)
+
+Participa(Num_Time, ID_Torneio, posicao)
+Num_Time -> Time(número)
+ID_Torneio -> Torneio(ID)
+posicao -> Pódios(posicao)
+
+Ninja(ID, nome, ranking, Num_time) //*Num_time é complexo e precisa ser resolvido com programação*
+Num_time -> Time(número)
+número -> Time(número)
+
+Estilo(ID_Ninja, estilo)
+ID_Ninja -> Ninja(ID)
+
+Treina(ID_Treinador, ID_Aluno)
+ID_Treinador -> Ninja(ID)
+ID_Aluno -> Ninja(ID)
+
+Jutsu(ID, nome)
+
+Desenvolve(ID_Ninja, ID_Jutsu)
+ID_Ninja -> Ninja(ID)
+ID_Jutsu -> Jutsu(ID)
+
+Taijutsu(ID_Jutsu, poder_fisico)
+ID_Jutsu -> Jutsu(ID)
+
+Ninjutsu(ID_Jutsu, qtd_chacra, elemento)
+ID_Jutsu -> Jutsu(ID)
+
+Genjutsu(ID_Jutsu, poder_ilusao)
+ID_Jutsu -> Jutsu(ID)
