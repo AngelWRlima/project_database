@@ -1,8 +1,8 @@
 -- Statement 17: Inserção de dados no país
 INSERT INTO pais (nome, daimyo)
-VALUES ('País do Fogo', 'Hiruzen Sarutobi');
+VALUES ('País do Fogo', 'Qin Shi Huang');
 
--- Statement 18: Inserção de dados na única vila (Vila da Folha) no País do Fogo
+-- Statement 18: Inserção de dados na Vila da Folha no País do Fogo
 INSERT INTO vila (id, nome, simbolo, nome_pais)
 VALUES (1, 'Vila da Folha', 'Folha', 'País do Fogo');
 
@@ -169,3 +169,84 @@ VALUES (9, 4);
 
 INSERT INTO treina (id_treinador, id_aluno)
 VALUES (9, 6);
+
+-- Statement 33: Inserção de dados na tabela Desenvolve
+INSERT INTO desenolve (id_ninja, id_jutsu)
+VALUES (1, 1)
+
+INSERT INTO desenolve (id_ninja, id_jutsu)
+VALUES (7, 1)
+
+INSERT INTO desenolve (id_ninja, id_jutsu)
+VALUES (8, 2)
+
+INSERT INTO desenolve (id_ninja, id_jutsu)
+VALUES (1, 3)
+
+INSERT INTO desenolve (id_ninja, id_jutsu)
+VALUES (2, 4)
+
+INSERT INTO desenolve (id_ninja, id_jutsu)
+VALUES (9, 5)
+
+INSERT INTO desenolve (id_ninja, id_jutsu)
+VALUES (3, 6)
+
+INSERT INTO desenolve (id_ninja, id_jutsu)
+VALUES (3, 7)
+
+
+
+-- VILA DA AREIA
+
+INSERT INTO vila (id, nome, simbolo, nome_pais)
+VALUES (2, 'Vila da Areia', 'Cabaça', 'País do Fogo');
+
+
+INSERT INTO time (numero, sensei, prota_1, prota_2, prota_3)
+VALUES (3, 'Baki', 'Sabaku no Gaara', 'Temari Nara', 'Nakamura Kankurō');
+
+
+INSERT INTO kage (id_vila, numero, nome)
+VALUES (2, 2, 'Yondaime Rasa');
+
+
+INSERT INTO missao (id, nivel, recompensa, data)
+VALUES (3, 'C', 200.00, DATE '2023-09-11');
+
+
+INSERT INTO envia (id_missao, num_time, id_vila)
+VALUES (3, 3, 2);
+
+
+INSERT INTO participa (num_time, id_torneio, posicao)
+VALUES (3, 1, 3);
+
+
+INSERT INTO ninja (id, nome, ranking, end_cep, end_logradouro, num_time)
+VALUES (10, 'Sabaku no Gaara', 1, '67677', 'Rua Areia', 3);
+
+INSERT INTO ninja (id, nome, ranking, end_cep, end_logradouro, num_time)
+VALUES (11, 'Temari Nara', 2, '67677', 'Rua Areia', 3);
+
+INSERT INTO ninja (id, nome, ranking, end_cep, end_logradouro, num_time)
+VALUES (12, 'Nakamura Kankurō', 3, '67677', 'Rua Areia', 3);
+
+
+INSERT INTO jutsu (id, nome)
+VALUES (8, 'Caixão de Areia');
+
+INSERT INTO jutsu (id, nome)
+VALUES (9, 'Marionete do Terror');
+
+INSERT INTO desenolve (id_ninja, id_jutsu)
+VALUES (10, 8)
+
+INSERT INTO desenolve (id_ninja, id_jutsu)
+VALUES (12, 9)
+
+INSERT INTO ninjutsu (id_jutsu, qtd_chacra, elemento)
+VALUES (8, 60, 'Terra');
+
+INSERT INTO ninjutsu (id_jutsu, qtd_chacra, elemento)
+VALUES (9, 25, 'Vento');
