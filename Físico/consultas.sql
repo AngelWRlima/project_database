@@ -35,3 +35,30 @@ SELECT m.id AS IDMissao, m.nivel AS NivelMissao, t.numero AS NumeroTime
 FROM missao m
 RIGHT JOIN envia e ON m.id = e.id_missao
 RIGHT JOIN time t ON e.num_time = t.numero;
+
+
+--Projetar o nível e a data das missões enviadas pela Vila da Folha;
+SELECT NIVEL, DATA
+FROM MISSAO
+JOIN ENVIA ON MISSAO.id = envia.ID_MISSAO
+JOIN VILA ON ENVIA.ID_VILA = VILA.ID
+WHERE VILA.NOME = 'Vila da Folha';
+
+
+-- Projetar o nome do Ninja Treinador que treinou mais de um Aluno;
+SELECT NOME FROM NINJA WHERE ID IN 
+    (SELECT ID_TREINADOR FROM TREINA 
+    GROUP BY ID_TREINADOR 
+    HAVING COUNT(*) > 1);
+
+
+-- Projetar o número do time que fez apenas uma missão;
+SELECT T.NUMERO
+FROM TIME T INNER
+JOIN ENVIA E ON T.NUMERO = E.NUM_TIME
+GROUP BY T.NUMERO
+HAVING COUNT(E.ID_MISSAO) = 1;
+
+
+
+
