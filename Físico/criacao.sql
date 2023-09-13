@@ -107,6 +107,15 @@ CREATE TABLE treina (
     constraint fk_treina_aluno foreign key (id_aluno) references ninja(id)
 );
 
+-- Criar tabela desenvolve
+CREATE TABLE desenvolve(
+    id_ninja
+    id_jutsu
+    constraint pk_desenvolve primary key (id_ninja, id_jutsu),
+    constraint fk_desenvolve_ninja foreign key (id_ninja) references ninja(id)
+    constraint fk_desenvolve_jutsu foreign key (id_jutsu) references jutsu(id)
+)
+
 -- Criar tabela Jutsu
 CREATE TABLE jutsu (
     id INT primary key,
