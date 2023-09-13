@@ -10,7 +10,7 @@ CREATE TABLE vila (
     id INT,
     nome VARCHAR(255),
     simbolo VARCHAR(255),
-    nome_pais VARCHAR(255),
+    nome_pais VARCHAR(255) NOT NULL,
     constraint pk_vila primary key (id),
     constraint fk_vila foreign key (nome_pais) references pais(nome)
 );
