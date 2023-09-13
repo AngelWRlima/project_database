@@ -59,6 +59,9 @@ JOIN ENVIA E ON T.NUMERO = E.NUM_TIME
 GROUP BY T.NUMERO
 HAVING COUNT(E.ID_MISSAO) = 1;
 
-
-
+-- Projetar os ids das vilas que mais fizeram missões;
+SELECT e.id_vila, COUNT(*) AS total_missões
+FROM envia e
+INNER JOIN missao m ON e.id_missao = m.id
+GROUP BY e.id_vila
 
