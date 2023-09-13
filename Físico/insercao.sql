@@ -172,28 +172,28 @@ VALUES (9, 6);
 
 -- Statement 33: Inserção de dados na tabela Desenvolve
 INSERT INTO desenvolve (id_ninja, id_jutsu, data)
-VALUES (1, 1, DATE '2023-09-08')
+VALUES (1, 1, DATE '2023-09-08');
 
 INSERT INTO desenvolve (id_ninja, id_jutsu, data)
-VALUES (7, 1, DATE '2023-09-08')
+VALUES (7, 1, DATE '2023-09-08');
 
 INSERT INTO desenvolve (id_ninja, id_jutsu, data)
-VALUES (8, 2, DATE '2023-09-07')
+VALUES (8, 2, DATE '2023-09-07');
 
 INSERT INTO desenvolve (id_ninja, id_jutsu, data)
-VALUES (1, 3, DATE '2023-09-06')
+VALUES (1, 3, DATE '2023-09-06');
 
 INSERT INTO desenvolve (id_ninja, id_jutsu, data)
-VALUES (2, 4, DATE '2023-09-09')
+VALUES (2, 4, DATE '2023-09-09');
 
 INSERT INTO desenvolve (id_ninja, id_jutsu, data)
-VALUES (9, 5, DATE '2023-09-09')
+VALUES (9, 5, DATE '2023-09-09');
 
 INSERT INTO desenvolve (id_ninja, id_jutsu, data)
-VALUES (3, 6, DATE '2023-09-10')
+VALUES (3, 6, DATE '2023-09-10');
 
 INSERT INTO desenvolve (id_ninja, id_jutsu, data)
-VALUES (3, 7, DATE '2023-09-10')
+VALUES (3, 7, DATE '2023-09-10');
 
 
 
@@ -240,10 +240,10 @@ INSERT INTO jutsu (id, nome)
 VALUES (9, 'Marionete do Terror');
 
 INSERT INTO desenvolve (id_ninja, id_jutsu, data)
-VALUES (10, 8, DATE '2023-09-11')
+VALUES (10, 8, DATE '2023-09-11');
 
 INSERT INTO desenvolve (id_ninja, id_jutsu, data)
-VALUES (12, 9, DATE '2023-09-11')
+VALUES (12, 9, DATE '2023-09-11');
 
 INSERT INTO ninjutsu (id_jutsu, qtd_chacra, elemento)
 VALUES (8, 60, 'Terra');
