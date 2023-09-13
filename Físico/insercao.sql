@@ -239,10 +239,10 @@ VALUES (8, 'Caixão de Areia');
 INSERT INTO jutsu (id, nome)
 VALUES (9, 'Marionete do Terror');
 
-INSERT INTO desenolve (id_ninja, id_jutsu)
+INSERT INTO desenvolve (id_ninja, id_jutsu)
 VALUES (10, 8)
 
-INSERT INTO desenolve (id_ninja, id_jutsu)
+INSERT INTO desenvolve (id_ninja, id_jutsu)
 VALUES (12, 9)
 
 INSERT INTO ninjutsu (id_jutsu, qtd_chacra, elemento)
