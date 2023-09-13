@@ -75,3 +75,52 @@ GROUP BY n.nome
 ORDER BY total_jutsus_criados DESC;
 
 
+-- Projetar todos os ninjas que participam de torneios e/ou que treinam outros ninjas
+SELECT nome_ninja, acao
+FROM (
+    SELECT n.nome AS nome_ninja, 'Participa em Torneio' AS acao
+    FROM ninja n
+    INNER JOIN participa p ON n.num_time = p.num_time
+
+    UNION
+
+    SELECT n.nome AS nome_ninja, 'É Treinador' AS acao
+    FROM ninja n
+    INNER JOIN treina t ON n.id = t.id_treinador
+);
+
+
+-- Projetar todas as vilas que tem pelo menos 1 ninja
+SELECT DISTINCT v.id, v.nome, v.simbolo
+FROM vila v
+WHERE EXISTS (
+    SELECT 1
+    FROM ninja n
+    WHERE n.num_time = v.id
+);
+
+
+-- Projetar todas as vilas que não tem nenhum ninja
+SELECT v.id, v.nome, v.simbolo
+FROM vila v
+LEFT JOIN ninja n ON v.id = n.num_time
+WHERE n.num_time IS NULL;
+
+
+--Projetar a quantidade de ninjas que estão no time 1
+SELECT t.numero AS numero_time, t.sensei, (
+    SELECT COUNT(*) 
+    FROM ninja 
+    WHERE num_time = 1
+) AS total_ninjas_time_1
+FROM time t
+WHERE t.numero = 1;
+
+
+--Projetar todas as missões que foram concluídas e os times que as concluíram
+SELECT m.id AS IDMissao, m.nivel AS NivelMissao, t.numero AS NumeroTime
+FROM missao m
+LEFT JOIN envia e ON m.id = e.id_missao
+LEFT JOIN time t ON e.num_time = t.numero
+WHERE e.num_time IS NOT NULL;
+
