@@ -64,7 +64,7 @@ CREATE TABLE Torneio (
 
 -- Criar tabela podios
 CREATE TABLE Podios (
-    Posição VARCHAR(255) PRIMARY KEY
+    Posição ID PRIMARY KEY
 );
 
 -- Criar tabela Participa
