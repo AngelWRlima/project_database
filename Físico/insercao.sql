@@ -7,15 +7,15 @@ INSERT INTO vila (id, nome, simbolo, nome_pais)
 VALUES (1, 'Vila da Folha', 'Folha', 'País do Fogo');
 
 -- Statement 19: Inserção de dados nos times (todos da Vila da Folha)
-INSERT INTO time (numero, sensei, prota_1, prota_2, prota_3)
-VALUES (1, 'Kakashi Hatake', 'Naruto Uzumaki', 'Sasuke Uchiha', 'Sakura Haruno');
+INSERT INTO time (numero, sensei)
+VALUES (1, 'Kakashi Hatake');
 
-INSERT INTO time (numero, sensei, prota_1, prota_2, prota_3)
-VALUES (2, 'Asuma Sarutobi', 'Shikamaru Nara', 'Ino Yamanaka', 'Choji Akimichi');
+INSERT INTO time (numero, sensei)
+VALUES (2, 'Asuma Sarutobi');
 
 -- Statement 20: Inserção de dados na tabela Kage
-INSERT INTO kage (id_vila, numero, nome)
-VALUES (1, 1, 'Hiruzen Sarutobi');
+INSERT INTO kage (id_vila, numero, nome, titulo)
+VALUES (1, 1, 'Hiruzen Sarutobi', 'Hokage');
 
 -- Statement 21: Inserção de dados na tabela Missão
 INSERT INTO missao (id, nivel, recompensa, data)
@@ -171,29 +171,29 @@ INSERT INTO treina (id_treinador, id_aluno)
 VALUES (9, 6);
 
 -- Statement 33: Inserção de dados na tabela Desenvolve
-INSERT INTO desenolve (id_ninja, id_jutsu)
-VALUES (1, 1)
+INSERT INTO desenvolve (id_ninja, id_jutsu, data)
+VALUES (1, 1, DATE '2023-09-08')
 
-INSERT INTO desenolve (id_ninja, id_jutsu)
-VALUES (7, 1)
+INSERT INTO desenvolve (id_ninja, id_jutsu, data)
+VALUES (7, 1, DATE '2023-09-08')
 
-INSERT INTO desenolve (id_ninja, id_jutsu)
-VALUES (8, 2)
+INSERT INTO desenvolve (id_ninja, id_jutsu, data)
+VALUES (8, 2, DATE '2023-09-07')
 
-INSERT INTO desenolve (id_ninja, id_jutsu)
-VALUES (1, 3)
+INSERT INTO desenvolve (id_ninja, id_jutsu, data)
+VALUES (1, 3, DATE '2023-09-06')
 
-INSERT INTO desenolve (id_ninja, id_jutsu)
-VALUES (2, 4)
+INSERT INTO desenvolve (id_ninja, id_jutsu, data)
+VALUES (2, 4, DATE '2023-09-09')
 
-INSERT INTO desenolve (id_ninja, id_jutsu)
-VALUES (9, 5)
+INSERT INTO desenvolve (id_ninja, id_jutsu, data)
+VALUES (9, 5, DATE '2023-09-09')
 
-INSERT INTO desenolve (id_ninja, id_jutsu)
-VALUES (3, 6)
+INSERT INTO desenvolve (id_ninja, id_jutsu, data)
+VALUES (3, 6, DATE '2023-09-10')
 
-INSERT INTO desenolve (id_ninja, id_jutsu)
-VALUES (3, 7)
+INSERT INTO desenvolve (id_ninja, id_jutsu, data)
+VALUES (3, 7, DATE '2023-09-10')
 
 
 
@@ -203,12 +203,12 @@ INSERT INTO vila (id, nome, simbolo, nome_pais)
 VALUES (2, 'Vila da Areia', 'Cabaça', 'País do Fogo');
 
 
-INSERT INTO time (numero, sensei, prota_1, prota_2, prota_3)
-VALUES (3, 'Baki', 'Sabaku no Gaara', 'Temari Nara', 'Nakamura Kankurō');
+INSERT INTO time (numero, sensei)
+VALUES (3, 'Baki');
 
 
-INSERT INTO kage (id_vila, numero, nome)
-VALUES (2, 2, 'Yondaime Rasa');
+INSERT INTO kage (id_vila, numero, nome, titulo)
+VALUES (2, 2, 'Yondaime Rasa', 'Kazekage');
 
 
 INSERT INTO missao (id, nivel, recompensa, data)
@@ -239,11 +239,11 @@ VALUES (8, 'Caixão de Areia');
 INSERT INTO jutsu (id, nome)
 VALUES (9, 'Marionete do Terror');
 
-INSERT INTO desenvolve (id_ninja, id_jutsu)
-VALUES (10, 8)
+INSERT INTO desenvolve (id_ninja, id_jutsu, data)
+VALUES (10, 8, DATE '2023-09-11')
 
-INSERT INTO desenvolve (id_ninja, id_jutsu)
-VALUES (12, 9)
+INSERT INTO desenvolve (id_ninja, id_jutsu, data)
+VALUES (12, 9, DATE '2023-09-11')
 
 INSERT INTO ninjutsu (id_jutsu, qtd_chacra, elemento)
 VALUES (8, 60, 'Terra');

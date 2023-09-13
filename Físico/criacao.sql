@@ -20,7 +20,8 @@ CREATE TABLE kage (
     id_vila INT,
     numero INT,
     nome VARCHAR(255),
-    constraint pk_kage primary key (id_vila, numero),
+    titulo VARCHAR(20),
+    constraint pk_kage primary key (id_vila),
     constraint fk_kage foreign key (id_vila) references vila(id)
 );
 
@@ -37,9 +38,6 @@ CREATE TABLE missao (
 CREATE TABLE time (
     numero INT,
     sensei VARCHAR(255),
-    prota_1 VARCHAR(255),
-    prota_2 VARCHAR(255),
-    prota_3 VARCHAR(255),
     constraint pk_time primary key (numero)
 );
 
@@ -109,9 +107,10 @@ CREATE TABLE treina (
 
 -- Criar tabela desenvolve
 CREATE TABLE desenvolve(
-    id_ninja
-    id_jutsu
-    constraint pk_desenvolve primary key (id_ninja, id_jutsu),
+    id_ninja INT,
+    id_jutsu INT,
+    data DATE,
+    constraint pk_desenvolve primary key (id_ninja, id_jutsu, data),
     constraint fk_desenvolve_ninja foreign key (id_ninja) references ninja(id)
     constraint fk_desenvolve_jutsu foreign key (id_jutsu) references jutsu(id)
 )
