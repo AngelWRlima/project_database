@@ -1,0 +1,37 @@
+-- Selecione todos os ninjas e seus estilos ninja (se tiverem) na Vila da Folha.
+SELECT n.nome, en.estilo
+FROM ninja n
+LEFT JOIN estilo_ninja en ON n.id = en.id_ninja
+WHERE n.num_time = 1;
+
+-- Encontre todos os ninjas que desenvolveram o jutsu 'Rasengan'.
+SELECT n.nome
+FROM ninja n
+INNER JOIN desenvolve d ON n.id = d.id_ninja
+INNER JOIN jutsu j ON d.id_jutsu = j.id
+WHERE j.nome = 'Rasengan';
+
+-- Listar todos os times e seus respectivos senseis na Vila da Folha, sem repetições
+SELECT distinct(t.numero), t.sensei
+FROM time t
+LEFT JOIN ninja n ON t.numero = n.num_time
+WHERE n.num_time IS NOT NULL;
+
+-- Encontre todos os times que não participaram do torneio com prêmio de 3000.00.
+SELECT numero, sensei
+FROM time
+WHERE numero NOT IN (
+    SELECT num_time
+    FROM participa
+    WHERE id_torneio = (
+        SELECT id
+        FROM torneio
+        WHERE premio = 3000.00
+    )
+);
+
+-- Liste todas as missões e seus times correspondentes, incluindo times que não participaram de nenhuma missão.
+SELECT m.id AS IDMissao, m.nivel AS NivelMissao, t.numero AS NumeroTime
+FROM missao m
+RIGHT JOIN envia e ON m.id = e.id_missao
+RIGHT JOIN time t ON e.num_time = t.numero;
